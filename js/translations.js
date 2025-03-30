@@ -30,7 +30,8 @@ const translations = {
             methods: {
                 local: 'f2ijr9foer1fj@example.com - nur lokaler Teil',
                 full: 'f2ijr9foer1fj@greig42.com - Ganze E-Mail (außer TLD)',
-                preserve: 'f2i.jr9foer1fj@greig42.com - Lokaler Teil mit Sonderzeichen'
+                preserve: 'f2i.jr9foer1fj@greig42.com - Lokaler Teil mit Sonderzeichen',
+                mask: '••••••••••••@•••••••.com - E-Mail mit Punkten maskiert'
             },
             outputLabel: 'Anonymisierter Text',
             resetButton: 'Zurücksetzen',
@@ -51,6 +52,10 @@ const translations = {
                     preserve: {
                         title: 'Lokaler Teil mit Punkten und Minus:',
                         description: 'Der Teil vor dem @ wird anonymisiert, wobei die Struktur (Punkte und Minuszeichen) erhalten bleibt.'
+                    },
+                    mask: {
+                        title: 'E-Mail mit Punkten maskiert:',
+                        description: 'Die E-Mail-Adresse wird mit Punkten maskiert.'
                     }
                 },
                 example: {
@@ -95,7 +100,8 @@ const translations = {
             methods: {
                 local: 'f2ijr9foer1fj@example.com - local part only',
                 full: 'f2ijr9foer1fj@greig42.com - full email (except TLD)',
-                preserve: 'f2i.jr9foer1fj@greig42.com - local part with special characters'
+                preserve: 'f2i.jr9foer1fj@greig42.com - local part with special characters',
+                mask: '••••••••••••@•••••••.com - email masked with dots'
             },
             outputLabel: 'Anonymized Text',
             resetButton: 'Reset',
@@ -116,6 +122,10 @@ const translations = {
                     preserve: {
                         title: 'Local Part with Dots and Minus:',
                         description: 'The part before @ is anonymized while preserving the structure (dots and minus signs).'
+                    },
+                    mask: {
+                        title: 'Email masked with dots:',
+                        description: 'The email address is masked with dots.'
                     }
                 },
                 example: {

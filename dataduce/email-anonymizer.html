@@ -31,16 +31,20 @@
                 </label>
                 <div class="space-y-2">
                     <label class="flex items-center">
-                        <input type="radio" name="anonymization" value="local" class="mr-2" checked>
-                        <span data-translate="emailAnonymizer.methods.local">f2ijr9foer1fj@example.com - nur lokaler Teil</span>
+                        <input type="radio" name="anonymization" value="local" class="form-radio text-blue-600" checked>
+                        <span class="ml-2" data-translate="emailAnonymizer.methods.local">f2ijr9foer1fj@example.com - nur lokaler Teil</span>
                     </label>
                     <label class="flex items-center">
-                        <input type="radio" name="anonymization" value="full" class="mr-2">
-                        <span data-translate="emailAnonymizer.methods.full">f2ijr9foer1fj@greig42.com - Ganze E-Mail (außer TLD)</span>
+                        <input type="radio" name="anonymization" value="full" class="form-radio text-blue-600">
+                        <span class="ml-2" data-translate="emailAnonymizer.methods.full">f2ijr9foer1fj@greig42.com - Ganze E-Mail (außer TLD)</span>
                     </label>
                     <label class="flex items-center">
-                        <input type="radio" name="anonymization" value="preserve" class="mr-2">
-                        <span data-translate="emailAnonymizer.methods.preserve">f2i.jr9foer1fj@greig42.com - Lokaler Teil mit Sonderzeichen</span>
+                        <input type="radio" name="anonymization" value="preserve" class="form-radio text-blue-600">
+                        <span class="ml-2" data-translate="emailAnonymizer.methods.preserve">f2i.jr9foer1fj@greig42.com - Lokaler Teil mit Sonderzeichen</span>
+                    </label>
+                    <label class="flex items-center">
+                        <input type="radio" name="anonymization" value="mask" class="form-radio text-blue-600">
+                        <span class="ml-2" data-translate="emailAnonymizer.methods.mask">••••••••••••@•••••••.com - E-Mail mit Punkten maskiert</span>
                     </label>
                 </div>
             </div>

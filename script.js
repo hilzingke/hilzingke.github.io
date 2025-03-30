@@ -24,6 +24,10 @@ function anonymizeText() {
                 return hashString(localPart) + '@' + hashString(domainName) + '.' + tld;
             case 'preserve':
                 return preserveLengthAnonymize(localPart) + '@' + domain;
+            case 'mask':
+                return maskString(localPart) + '@' + maskString(domainName) + '.' + tld;
+            default:
+                return email;
         }
     });
     
@@ -88,4 +92,9 @@ function copyToClipboard() {
     setTimeout(() => {
         button.textContent = originalText;
     }, 2000);
+}
+
+// Funktion zum Maskieren eines Strings mit Punkten
+function maskString(str) {
+    return '•'.repeat(str.length);
 } 
