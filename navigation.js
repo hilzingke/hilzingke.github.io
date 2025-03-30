@@ -4,9 +4,18 @@ fetch('/navigation.html')
     .then(html => {
         document.getElementById('navigation-container').innerHTML = html;
         
-        // Event Listener für das mobile Menü
-        const mobileMenuButton = document.querySelector('.mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
+        // Setze aktiven Menüpunkt basierend auf der aktuellen URL
+        const currentPath = window.location.pathname;
+        const menuItems = document.querySelectorAll('.nav-link');
+        menuItems.forEach(item => {
+            if (item.getAttribute('href') === currentPath) {
+                item.classList.add('text-blue-600');
+            }
+        });
+
+        // Event-Listener für das mobile Menü
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
         
         if (mobileMenuButton && mobileMenu) {
             mobileMenuButton.addEventListener('click', () => {
@@ -14,78 +23,67 @@ fetch('/navigation.html')
             });
         }
 
-        // Event Listener für die Sprachauswahl
-        const langDropdownButton = document.getElementById('lang-dropdown-button');
-        const langDropdown = document.getElementById('lang-dropdown');
-        const currentLangEmoji = document.getElementById('current-lang-emoji');
+        // Event-Listener für die Sprachauswahl
+        const languageButton = document.getElementById('language-button');
+        const languageDropdown = document.getElementById('language-dropdown');
+        const languageLinks = document.querySelectorAll('.language-link');
 
-        if (langDropdownButton && langDropdown) {
+        if (languageButton && languageDropdown) {
             // Toggle Dropdown
-            langDropdownButton.addEventListener('click', (e) => {
+            languageButton.addEventListener('click', (e) => {
                 e.stopPropagation();
-                langDropdown.classList.toggle('hidden');
+                languageDropdown.classList.toggle('hidden');
             });
 
             // Schließe Dropdown bei Klick außerhalb
             document.addEventListener('click', (e) => {
-                if (!langDropdown.contains(e.target) && !langDropdownButton.contains(e.target)) {
-                    langDropdown.classList.add('hidden');
+                if (!languageDropdown.contains(e.target) && !languageButton.contains(e.target)) {
+                    languageDropdown.classList.add('hidden');
                 }
             });
 
-            // Sprachauswahl
-            const langLinks = document.querySelectorAll('[data-lang]');
-            langLinks.forEach(link => {
+            // Event-Listener für die Sprachauswahl
+            languageLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const lang = link.getAttribute('data-lang');
-                    const emoji = link.getAttribute('data-emoji');
-                    
-                    // Speichere die ausgewählte Sprache
                     localStorage.setItem('selectedLanguage', lang);
                     
                     // Aktualisiere die UI
-                    if (currentLangEmoji) {
-                        currentLangEmoji.textContent = emoji;
-                    }
+                    updateLanguageUI();
                     
                     // Schließe das Dropdown
-                    langDropdown.classList.add('hidden');
+                    languageDropdown.classList.add('hidden');
                     
-                    // Aktualisiere alle Übersetzungen
-                    updatePageTranslations();
+                    // Löse das languageChanged Event aus
+                    document.dispatchEvent(new Event('languageChanged'));
                 });
             });
-
-            // Setze die aktuelle Sprache
-            const currentLang = localStorage.getItem('selectedLanguage') || 'de';
-            const currentLangLink = document.querySelector(`[data-lang="${currentLang}"]`);
-            if (currentLangLink) {
-                const emoji = currentLangLink.getAttribute('data-emoji');
-                if (currentLangEmoji) {
-                    currentLangEmoji.textContent = emoji;
-                }
-            }
         }
 
-        // Setze aktiven Menüpunkt basierend auf der aktuellen URL
-        const currentPath = window.location.pathname;
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === currentPath) {
-                link.classList.add('border-blue-500', 'text-gray-900');
-            }
-        });
-
-        // Aktualisiere alle Übersetzungen
-        updatePageTranslations();
+        // Initialisiere die Sprachauswahl
+        updateLanguageUI();
     })
     .catch(error => console.error('Fehler beim Laden der Navigation:', error));
 
-function updateLanguageUI(lang, emoji) {
-    // Aktualisiere das aktuelle Sprach-Emoji
-    const currentLangEmoji = document.getElementById('current-lang-emoji');
-    if (currentLangEmoji) {
-        currentLangEmoji.textContent = emoji;
+// Funktion zum Aktualisieren der Sprachauswahl-UI
+function updateLanguageUI() {
+    const currentLang = localStorage.getItem('selectedLanguage') || 'de';
+    const languageButton = document.getElementById('language-button');
+    const languageLinks = document.querySelectorAll('.language-link');
+    
+    if (languageButton) {
+        // Aktualisiere das Emoji basierend auf der ausgewählten Sprache
+        const emoji = currentLang === 'de' ? '🇩🇪' : '🇬🇧';
+        languageButton.querySelector('span').textContent = emoji;
     }
+    
+    // Aktualisiere die aktive Sprache in der Dropdown-Liste
+    languageLinks.forEach(link => {
+        if (link.getAttribute('data-lang') === currentLang) {
+            link.classList.add('bg-gray-100');
+        } else {
+            link.classList.remove('bg-gray-100');
+        }
+    });
 } 

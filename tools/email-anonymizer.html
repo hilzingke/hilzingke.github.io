@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Mail Anonymisierer - Hilzingke Tools</title>
+    <title data-translate="emailAnonymizer.title">E-Mail Anonymisierer - Hilzingke Tools</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
@@ -13,50 +13,50 @@
     <div id="navigation-container"></div>
 
     <div class="container mx-auto px-4 py-8">
-        <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">E-Mail Anonymisierer</h1>
+        <h1 class="text-3xl font-bold text-center mb-8 text-gray-800" data-translate="emailAnonymizer.title">E-Mail Anonymisierer</h1>
         
         <div class="bg-white rounded-lg shadow-lg p-6">
             <div class="mb-6">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="input-text">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="input-text" data-translate="emailAnonymizer.inputLabel">
                     Eingabetext
                 </label>
                 <textarea id="input-text" class="w-full h-48 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" 
+                    data-translate-placeholder="emailAnonymizer.inputPlaceholder"
                     placeholder="Fügen Sie hier Ihren Text ein..."></textarea>
             </div>
 
             <div class="mb-6">
-                <label class="block text-gray-700 text-sm font-bold mb-2">
-                    Anonymisierungsmethode
-                    (am Beispiel von max.mustermann@example.com)
+                <label class="block text-gray-700 text-sm font-bold mb-2" data-translate="emailAnonymizer.methodLabel">
+                    Anonymisierungsmethode (am Beispiel von max.mustermann@example.com)
                 </label>
                 <div class="space-y-2">
                     <label class="flex items-center">
                         <input type="radio" name="anonymization" value="local" class="mr-2" checked>
-                        <span>f2ijr9foer1fj@example.com - nur lokaler Teil</span>
+                        <span data-translate="emailAnonymizer.methods.local">f2ijr9foer1fj@example.com - nur lokaler Teil</span>
                     </label>
                     <label class="flex items-center">
                         <input type="radio" name="anonymization" value="full" class="mr-2">
-                        <span>f2ijr9foer1fj@greig42.com - Ganze E-Mail (außer TLD)</span>
+                        <span data-translate="emailAnonymizer.methods.full">f2ijr9foer1fj@greig42.com - Ganze E-Mail (außer TLD)</span>
                     </label>
                     <label class="flex items-center">
                         <input type="radio" name="anonymization" value="preserve" class="mr-2">
-                        <span>f2i.jr9foer1fj@greig42.com - Lokaler Teil mit Sonderzeichen</span>
+                        <span data-translate="emailAnonymizer.methods.preserve">f2i.jr9foer1fj@greig42.com - Lokaler Teil mit Sonderzeichen</span>
                     </label>
                 </div>
             </div>
 
             <div class="mb-6">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="output-text">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="output-text" data-translate="emailAnonymizer.outputLabel">
                     Anonymisierter Text
                 </label>
                 <textarea id="output-text" class="w-full h-48 p-3 border rounded-lg bg-gray-50" readonly></textarea>
             </div>
 
             <div class="flex justify-end space-x-4">
-                <button onclick="clearText()" class="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors">
+                <button onclick="clearText()" class="px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors" data-translate="emailAnonymizer.resetButton">
                     Zurücksetzen
                 </button>
-                <button onclick="copyToClipboard()" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+                <button onclick="copyToClipboard()" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors" data-translate="emailAnonymizer.copyButton">
                     Kopieren
                 </button>
             </div>
@@ -64,45 +64,57 @@
 
         <!-- Erklärender Container -->
         <div class="mt-8 bg-white rounded-lg shadow-lg p-6">
-            <h2 class="text-2xl font-bold text-gray-800 mb-4">Wie funktioniert der E-Mail Anonymisierer?</h2>
+            <h2 class="text-2xl font-bold text-gray-800 mb-4" data-translate="emailAnonymizer.explanation.title">Wie funktioniert der E-Mail Anonymisierer?</h2>
             <div class="space-y-4 text-gray-600">
-                <p>
+                <p data-translate="emailAnonymizer.explanation.description">
                     Der E-Mail Anonymisierer ist ein Tool, das E-Mail-Adressen in Ihren Texten automatisch anonymisiert. 
                     Dies ist besonders nützlich, wenn Sie Dokumente oder Texte veröffentlichen möchten, ohne persönliche 
                     E-Mail-Adressen preiszugeben.
                 </p>
                 
-                <h3 class="text-lg font-semibold text-gray-800">Verfügbare Anonymisierungsmethoden:</h3>
+                <h3 class="text-lg font-semibold text-gray-800" data-translate="emailAnonymizer.explanation.methodsTitle">Verfügbare Anonymisierungsmethoden:</h3>
                 <ul class="list-disc pl-5 space-y-2">
                     <li>
-                        <span class="font-medium">Nur lokaler Teil (vor @):</span> 
-                        Nur der Teil vor dem @-Zeichen wird anonymisiert. Die Domain bleibt erhalten.
+                        <span class="font-medium" data-translate="emailAnonymizer.explanation.methods.local.title">Nur lokaler Teil (vor @):</span> 
+                        <span data-translate="emailAnonymizer.explanation.methods.local.description">Nur der Teil vor dem @-Zeichen wird anonymisiert. Die Domain bleibt erhalten.</span>
                     </li>
                     <li>
-                        <span class="font-medium">Ganze E-Mail (außer TLD):</span> 
-                        Die komplette E-Mail-Adresse wird anonymisiert, nur die Top-Level-Domain (z.B. .com, .de) bleibt erhalten.
+                        <span class="font-medium" data-translate="emailAnonymizer.explanation.methods.full.title">Ganze E-Mail (außer TLD):</span> 
+                        <span data-translate="emailAnonymizer.explanation.methods.full.description">Die komplette E-Mail-Adresse wird anonymisiert, nur die Top-Level-Domain (z.B. .com, .de) bleibt erhalten.</span>
                     </li>
                     <li>
-                        <span class="font-medium">Lokaler Teil mit Punkten und Minus:</span> 
-                        Der Teil vor dem @ wird anonymisiert, wobei die Struktur (Punkte und Minuszeichen) erhalten bleibt.
+                        <span class="font-medium" data-translate="emailAnonymizer.explanation.methods.preserve.title">Lokaler Teil mit Punkten und Minus:</span> 
+                        <span data-translate="emailAnonymizer.explanation.methods.preserve.description">Der Teil vor dem @ wird anonymisiert, wobei die Struktur (Punkte und Minuszeichen) erhalten bleibt.</span>
                     </li>
                 </ul>
 
                 <div class="bg-gray-50 p-4 rounded-lg mt-4">
-                    <h4 class="font-semibold text-gray-800 mb-2">Beispiel:</h4>
-                    <p class="font-mono">
+                    <h4 class="font-semibold text-gray-800 mb-2" data-translate="emailAnonymizer.explanation.example.title">Beispiel:</h4>
+                    <p class="font-mono" data-translate="emailAnonymizer.explanation.example.text">
                         max.mustermann@example.com → abc.defghijklm@example.com
                     </p>
                 </div>
 
-                <p class="text-sm text-gray-500 mt-4">
+                <p class="text-sm text-gray-500 mt-4" data-translate="emailAnonymizer.explanation.privacy">
                     Hinweis: Die Anonymisierung erfolgt clientseitig in Ihrem Browser. Ihre Daten werden nicht an unseren Server gesendet.
                 </p>
             </div>
         </div>
     </div>
 
-    <script src="../navigation.js"></script>
-    <script src="../script.js"></script>
+    <script src="/js/translations.js"></script>
+    <script src="/navigation.js"></script>
+    <script src="/script.js"></script>
+    <script>
+        // Aktualisiere Übersetzungen beim Laden der Seite
+        document.addEventListener('DOMContentLoaded', function() {
+            updatePageTranslations();
+        });
+
+        // Aktualisiere Übersetzungen bei Sprachänderung
+        document.addEventListener('languageChanged', function() {
+            updatePageTranslations();
+        });
+    </script>
 </body>
 </html> 
