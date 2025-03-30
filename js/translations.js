@@ -5,6 +5,12 @@ const translations = {
             emailAnonymizer: 'E-Mail Anonymisierer',
             language: 'Sprache'
         },
+        index: {
+            title: 'dataduce - Tools für die Datenverarbeitung',
+            welcome: 'Willkommen bei dataduce',
+            subtitle: 'Ihre Tools für die Datenverarbeitung',
+            openTool: 'Tool öffnen'
+        },
         home: {
             title: 'Willkommen bei Hilzingke Tools',
             description: 'Entdecken Sie unsere nützlichen Online-Tools für verschiedene Aufgaben.',
@@ -17,6 +23,7 @@ const translations = {
         },
         emailAnonymizer: {
             title: 'E-Mail Anonymisierer',
+            description: 'Anonymisieren Sie E-Mail-Adressen in Texten mit verschiedenen Methoden.',
             inputLabel: 'Eingabetext',
             inputPlaceholder: 'Fügen Sie hier Ihren Text ein...',
             methodLabel: 'Anonymisierungsmethode (am Beispiel von max.mustermann@example.com)',
@@ -54,7 +61,7 @@ const translations = {
             }
         },
         footer: {
-            copyright: '© 2024 Hilzingke Tools. Alle Rechte vorbehalten.'
+            copyright: '© 2024 dataduce. Alle Rechte vorbehalten.'
         }
     },
     en: {
@@ -62,6 +69,12 @@ const translations = {
             home: 'Home',
             emailAnonymizer: 'Email Anonymizer',
             language: 'Language'
+        },
+        index: {
+            title: 'dataduce - Data Processing Tools',
+            welcome: 'Welcome to dataduce',
+            subtitle: 'Your tools for data processing',
+            openTool: 'Open Tool'
         },
         home: {
             title: 'Welcome to Hilzingke Tools',
@@ -75,6 +88,7 @@ const translations = {
         },
         emailAnonymizer: {
             title: 'Email Anonymizer',
+            description: 'Anonymize email addresses in your texts using various methods.',
             inputLabel: 'Input Text',
             inputPlaceholder: 'Enter your text here...',
             methodLabel: 'Anonymization Method (example: max.mustermann@example.com)',
@@ -112,7 +126,7 @@ const translations = {
             }
         },
         footer: {
-            copyright: '© 2024 Hilzingke Tools. All rights reserved.'
+            copyright: '© 2024 dataduce. All rights reserved.'
         }
     }
 };

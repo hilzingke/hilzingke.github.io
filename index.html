@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hilzingke Tools</title>
+    <title data-translate="index.title">dataduce - Tools für die Datenverarbeitung</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -13,16 +13,16 @@
     <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <div class="px-4 py-6 sm:px-0">
             <div class="text-center">
-                <h1 class="text-4xl font-bold text-gray-900 mb-4">Willkommen bei Hilzingke Tools</h1>
-                <p class="text-xl text-gray-600 mb-8">Eine Sammlung nützlicher Online-Tools für verschiedene Anwendungsfälle</p>
+                <h1 class="text-4xl font-bold text-gray-900 mb-4" data-translate="index.welcome">Willkommen bei dataduce</h1>
+                <p class="text-xl text-gray-600 mb-8" data-translate="index.subtitle">Ihre Tools für die Datenverarbeitung</p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Tool-Karte: E-Mail Anonymisierer -->
                     <div class="bg-white overflow-hidden shadow rounded-lg">
                         <div class="p-6">
-                            <h3 class="text-lg font-medium text-gray-900 mb-2">E-Mail Anonymisierer</h3>
-                            <p class="text-gray-600 mb-4">Anonymisieren Sie E-Mail-Adressen in Texten mit verschiedenen Methoden.</p>
-                            <a href="/tools/email-anonymizer.html" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                            <h3 class="text-lg font-medium text-gray-900 mb-2" data-translate="emailAnonymizer.title">E-Mail Anonymisierer</h3>
+                            <p class="text-gray-600 mb-4" data-translate="emailAnonymizer.description">Anonymisieren Sie E-Mail-Adressen in Texten mit verschiedenen Methoden.</p>
+                            <a href="/dataduce/email-anonymizer.html" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700" data-translate="index.openTool">
                                 Tool öffnen
                             </a>
                         </div>
@@ -37,12 +37,24 @@
     <!-- Footer -->
     <footer class="bg-white shadow-lg mt-8">
         <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-            <p class="text-center text-gray-500 text-sm">
-                © 2024 Hilzingke Tools. Alle Rechte vorbehalten.
+            <p class="text-center text-gray-500 text-sm" data-translate="footer.copyright">
+                © 2024 dataduce. Alle Rechte vorbehalten.
             </p>
         </div>
     </footer>
 
-    <script src="navigation.js"></script>
+    <script src="/js/translations.js"></script>
+    <script src="/navigation.js"></script>
+    <script>
+        // Aktualisiere Übersetzungen beim Laden der Seite
+        document.addEventListener('DOMContentLoaded', function() {
+            updatePageTranslations();
+        });
+
+        // Aktualisiere Übersetzungen bei Sprachänderung
+        document.addEventListener('languageChanged', function() {
+            updatePageTranslations();
+        });
+    </script>
 </body>
 </html>
