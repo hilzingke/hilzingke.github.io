@@ -7,7 +7,7 @@ const translations = {
         },
         index: {
             title: 'dataduce - Tools für die Datenverarbeitung',
-            welcome: 'Willkommen bei dataduce',
+            welcome: 'Willkommen bei',
             subtitle: 'Ihre Tools für die Datenverarbeitung',
             openTool: 'Tool öffnen'
         },
@@ -77,7 +77,7 @@ const translations = {
         },
         index: {
             title: 'dataduce - Data Processing Tools',
-            welcome: 'Welcome to dataduce',
+            welcome: 'Welcome to',
             subtitle: 'Your tools for data processing',
             openTool: 'Open Tool'
         },
