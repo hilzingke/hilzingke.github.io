@@ -19,7 +19,7 @@ const translations = {
         "emailAnonymizer.copiedButton": "Kopiert!",
         
         // Startseite
-        "home.title": "Willkommen bei Hilzingke Tools",
+        "home.title": "Willkommen bei",
         "home.subtitle": "Eine Sammlung nützlicher Online-Tools für verschiedene Anwendungsfälle",
         "home.emailAnonymizer.title": "E-Mail Anonymisierer",
         "home.emailAnonymizer.description": "Anonymisieren Sie E-Mail-Adressen in Texten mit verschiedenen Methoden.",
@@ -45,7 +45,7 @@ const translations = {
         "emailAnonymizer.copiedButton": "Copied!",
         
         // Startseite
-        "home.title": "Welcome to Hilzingke Tools",
+        "home.title": "Welcome to",
         "home.subtitle": "A collection of useful online tools for various use cases",
         "home.emailAnonymizer.title": "Email Anonymizer",
         "home.emailAnonymizer.description": "Anonymize email addresses in texts using various methods.",
